@@ -1,0 +1,16 @@
+#4th October 2018
+
+CREATE TABLE pizza (
+	orderNo INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	size enum('Small','Medium','Large') NOT NULL,
+    topping set('Ham','Pepperoni','Mushroom','Olives')NOT NULL);
+
+#should work
+INSERT INTO pizza values(null, 'Small','Ham,Mushroom');
+INSERT INTO pizza values(null, 'Small','Ham,Mushroom,Olives');
+
+#should not work
+INSERT INTO pizza values(null, 'Small','Ham,Mushroom,Olives,Cheese');
+INSERT INTO pizza values(null, 'Xtra','Ham,Mushroom,Olives,Cheese');
+
+SELECT * from pizza;
