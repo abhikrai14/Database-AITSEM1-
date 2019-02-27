@@ -1,0 +1,29 @@
+id
+fname
+lname
+no.
+email
+acc type	basic, student, business Lite, premium
+subsc duration
+storage reqd
+p/day
+
+
+
+
+CREATE DATABASE IF NOT EXISTS BEng_Assign;
+USE BEng_Assign;
+
+DROP TABLE IF EXISTS CloudUsers;
+
+
+CREATE TABLE CloudUsers (
+	id INTEGER AUTO_INCREMENT NOT NULL PRIMARY KEY,
+	firstName VARCHAR(20) NOT NULL,
+	lastName VARCHAR(20) NOT NULL,
+	phone INTEGER NOT NULL,
+	email VARCHAR(40) NOT NULL,
+	accountType VARCHAR(15) NOT NULL,
+	storageReqdGB INTEGER NOT NULL,
+	subscriptionDays INTEGER NOT NULL,
+	pricePerDay DECIMAL(4, 2) NOT NULL);
